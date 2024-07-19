@@ -110,6 +110,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['search'])) {
             height: 150px;
         }
 
+        .bordered-info {
+            border: 3px solid #007bff; /* Ganti dengan warna border yang Anda inginkan */
+            padding: 15px; /* Tambahkan padding untuk ruang di dalam border */
+            border-radius: 5px; /* Opsional: menambahkan sudut membulat pada border */
+            margin-top: 20px; /* Opsional: menambahkan jarak atas untuk elemen border */
+        }
+
+        .bordered-info legend {
+            font-weight: bold; /* Opsional: menjadikan teks legend lebih tebal */
+        }
+
+        .bordered-info legend {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .bordered-info legend br {
+            content: ""; /* Menambahkan baris baru */
+            display: block;
+        }
+
+
     </style>
 </head>
 
@@ -144,18 +166,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['search'])) {
                     <div class="container">
                         <fieldset>
                             <legend>Cari Saldo</legend>
-                            <div class="mb-3">
-                                <div class="input-group">
+                            <div class="d-flex align-items-center">
+                                <div class="input-group me-2 flex-grow-1">
                                     <span class="input-group-text"><i class="fas fa-search"></i></span>
                                     <input type="text" id="no_rek" name="no_rek" class="form-control" placeholder="No Rekening" required>
                                 </div>
+                                <button type="submit" name="search" class="btn btn-primary">Cari</button>
                             </div>
-                            <button type="submit" name="search" class="btn btn-primary">
-                                <i class="fas fa-search"></i> Search
-                            </button>
                         </fieldset>
                     </div>
                 </form>
+
 
 
                 <!-- Tampilkan Pesan Error -->
@@ -190,8 +211,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['search'])) {
                 <?php if ($info): ?>
                     <?php if (is_array($info)): ?>
                         <div class="container">
-                            <fieldset>
-                                <legend>Informasi Saldo</legend>
+                            <fieldset class="bordered-info">
+                                <legend>Informasi Saldo <br>
+                                a/n rekening <?php echo htmlspecialchars($info['nama_nasabah']); ?></legend>
                                 <div class="mb-3">
                                     <p><i class="fas fa-user icon-label"></i><strong> Nama Nasabah:</strong> <?php echo htmlspecialchars($info['nama_nasabah']); ?></p>
                                     <p><i class="fas fa-id-card icon-label"></i><strong> No Rekening:</strong> <?php echo htmlspecialchars($info['no_rek']); ?></p>
@@ -202,13 +224,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['search'])) {
                         </div>
                     <?php else: ?>
                         <div class="container">
-                            <fieldset>
-                                <legend>Informasi Saldo</legend>
+                            <fieldset class="bordered-info">
+                                <legend>Informasi Saldo <br>
+                                a/n rekening <?php echo htmlspecialchars($info); ?></legend>
                                 <p><?php echo htmlspecialchars($info); ?></p>
                             </fieldset>
                         </div>
                     <?php endif; ?>
                 <?php endif; ?>
+
 
             </main>
         </div>

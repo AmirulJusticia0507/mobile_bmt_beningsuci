@@ -16,7 +16,7 @@ if (!isset($_SESSION['userid'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Dashboard - SITABUNG BMT BENING SUCI</title>
+    <title>Produk Simpanan - SITABUNG BMT BENING SUCI</title>
     <!-- Tambahkan link Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Tambahkan link AdminLTE CSS -->
@@ -108,36 +108,12 @@ if (!isset($_SESSION['userid'])) {
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                        <li class="breadcrumb-item active" aria-current="page">Produk Simpanan</li>
                     </ol>
                 </nav>
                 <?php
                 include 'navigation.php';
                 ?>
-
-                <div class="row" align="center">
-                    <div class="col-md-3 mb-3">
-                        <div class="card">
-                            <div class="card-body text-center">
-                                <img src="img/path-to-setor-tunai-icon.png" alt="Setor Tunai Icon" class="img-fluid" style="max-height: 100px;">
-                                <h5 class="card-title">Setor Tunai</h5>
-                                <p class="card-text">Klik untuk form Setor Tunai.</p>
-                                <button onclick="location.href='setortunai.php?page=setortunai'" class="btn btn-secondary"><i class="fas fa-money-bill"></i> Setor Tunai</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <div class="card">
-                            <div class="card-body text-center">
-                                <img src="img/path-to-cek-saldo-icon.png" alt="Cek Saldo Icon" class="img-fluid" style="max-height: 100px;">
-                                <h5 class="card-title">Cek Saldo</h5>
-                                <p class="card-text">Klik untuk cek saldo Anda.</p>
-                                <button onclick="location.href='ceksaldo.php?page=ceksaldo'" class="btn btn-secondary"><i class="fas fa-user"></i> Cek Saldo</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <hr><br>
 
             </main>
         </div>
