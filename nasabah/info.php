@@ -7,7 +7,7 @@
           <div class="info_logo">
             <img src="../img/logobeningsuci1.png" alt="" />
             <span>
-              BMT Bening Suci
+              BMT Bening Suci Prambanan
             </span>
           </div>
           <div class="social_box">

@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <div class="carousel-inner">
   <div class="carousel-item active">
     <div class="container-fluid">
@@ -13,10 +14,10 @@
             </p>
             <div class="btn-box">
               <a href="./about.php" class="btn-1">
-                Tentang Kami
+              <i class="fas fa-info-circle"></i> Tentang Kami
               </a>
               <a href="./category.php" class="btn-2">
-                Produk Kami
+              <i class="fas fa-box"></i> Produk Kami
               </a>
             </div>
           </div>
@@ -43,10 +44,10 @@
             </p>
             <div class="btn-box">
               <a href="./about.php" class="btn-1">
-                Tentang Kami
+              <i class="fas fa-info-circle"></i> Tentang Kami
               </a>
               <a href="./category.php" class="btn-2">
-                Produk Kami
+              <i class="fas fa-box"></i> Produk Kami
               </a>
             </div>
           </div>
@@ -73,10 +74,10 @@
             </p>
             <div class="btn-box">
               <a href="./about.php" class="btn-1">
-                Tentang Kami
+              <i class="fas fa-info-circle"></i> Tentang Kami
               </a>
               <a href="./category.php" class="btn-2">
-                Produk Kami
+              <i class="fas fa-box"></i> Produk Kami
               </a>
             </div>
           </div>
