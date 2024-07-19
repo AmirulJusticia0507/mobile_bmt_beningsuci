@@ -79,9 +79,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <div class="content">
         <div class="col-md-6" align="center">
-            <img src="img/e-absen.png" alt="Image" class="img-fluid" style="width:100%">
+            <img src="img/logobeningsuci1.png" alt="Image" class="img-fluid" style="width:100%">
         </div>
-        <div class="text">Login <span style="color:green">SI ABSENSI</span></div>
+        <div class="text">Login <span style="color:green">Sitabung Bening Suci</span></div>
         <form action="#" method="post">
             <?php if (isset($error)) : ?>
                 <div class="error"><?php echo $error; ?></div>

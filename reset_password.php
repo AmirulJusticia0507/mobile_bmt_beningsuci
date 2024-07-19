@@ -40,9 +40,9 @@ function cleanInput($input)
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reset Password E-Visit BPRS HIK MCI</title>
+    <title>Reset Password Sitabung BMT Bening Suci</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    <link rel="icon" href="img/logo_white.png" type="image/png">
+    <link rel="icon" href="img/logobeningsuci1.png" type="image/png">
     <style>
         @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
         *{
@@ -168,9 +168,9 @@ function cleanInput($input)
 <body>
     <div class="content">
         <div class="col-md-6" align="center">
-            <img src="img/e-absen.png" alt="Image" class="img-fluid" style="width:100%">
+            <img src="img/logobeningsuci1.png" alt="Image" class="img-fluid" style="width:100%">
         </div>
-        <div class="text">Reset Password <span style="color:green">SI ABSENSI</span></div>
+        <div class="text">Reset Password <span style="color:green">Sitabung Bening Suci</span></div>
         <form action="#" method="post">
             <?php if (isset($error)) : ?>
                 <div class="error"><?php echo $error; ?></div>
