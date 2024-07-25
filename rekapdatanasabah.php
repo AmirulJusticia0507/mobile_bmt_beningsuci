@@ -9,14 +9,6 @@ if (!isset($_SESSION['userid'])) {
     exit;
 }
 
-// Ambil data dari database jika ada permintaan GET untuk pembacaan data
-$nasabahData = [];
-if (isset($_GET['action']) && $_GET['action'] == 'read') {
-    $result = $koneklocalhost->query("SELECT id, no_rek, nama_nasabah, jenis_kelamin, alamat, tgl_mulai, saldo_akhir, kolektor FROM tabungannasabah");
-    if ($result) {
-        $nasabahData = $result->fetch_all(MYSQLI_ASSOC);
-    }
-}
 
 // Jika ada permintaan POST untuk menambah, mengedit, atau menghapus data
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -173,9 +165,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>No Rekening</th>
+                                <th style="text-align:center; white-space: normal;">No Rekening</th>
                                 <th>Nama Nasabah</th>
-                                <th>Jenis Kelamin</th>
+                                <th style="text-align:center; white-space: normal;">Jenis Kelamin</th>
                                 <th>Alamat</th>
                                 <th>Tanggal Mulai</th>
                                 <th>Saldo Akhir</th>
@@ -184,22 +176,43 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($nasabahData as $nasabah): ?>
-                                <tr data-id="<?php echo $nasabah['id']; ?>">
-                                    <td><?php echo $nasabah['id']; ?></td>
-                                    <td><?php echo $nasabah['no_rek']; ?></td>
-                                    <td><?php echo $nasabah['nama_nasabah']; ?></td>
-                                    <td><?php echo $nasabah['jenis_kelamin']; ?></td>
-                                    <td><?php echo $nasabah['alamat']; ?></td>
-                                    <td><?php echo $nasabah['tgl_mulai']; ?></td>
-                                    <td><?php echo number_format($nasabah['saldo_akhir'], 2, ',', '.'); ?></td>
-                                    <td><?php echo $nasabah['kolektor']; ?></td>
-                                    <td>
-                                        <button class="btn btn-warning btn-sm edit-btn" data-id="<?php echo $nasabah['id']; ?>" data-bs-toggle="modal" data-bs-target="#editModal">Edit</button>
-                                        <button class="btn btn-danger btn-sm delete-btn" data-id="<?php echo $nasabah['id']; ?>">Delete</button>
-                                    </td>
-                                </tr>
-                            <?php endforeach; ?>
+                            <?php
+                            $sql = "SELECT * FROM tabungannasabah";
+                            $nomorUrutTerakhir = 1;
+                            $result = $koneklocalhost->query($sql);
+                            function formatRupiah($angka){
+                                $angka = floatval(str_replace(',', '.', str_replace('.', '', $angka))); // Convert string to float
+                                return 'Rp ' . number_format($angka, 0, ',', '.');
+                            }
+                            
+                            
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                    echo "<tr>";
+                                    echo "<td style='text-align:center; white-space: normal;'>" . $nomorUrutTerakhir . "</td>";
+                                    echo "<td>" . $row["no_rek"] . "</td>";
+                                    echo "<td>" . $row["nama_nasabah"] . "</td>";
+                                    echo "<td style='text-align:center; white-space: normal;'>" . $row["jenis_kelamin"] . "</td>";
+                                    echo "<td>" . $row["alamat"] . "</td>";
+                                    echo "<td>" . date('d-m-Y', strtotime($row["tgl_mulai"])) . "</td>";
+                                    echo "<td>" . formatRupiah($row["saldo_akhir"]) . "</td>";
+                                    echo "<td>" . $row["kolektor"] . "</td>";
+                                    echo '<td nowrap>
+                                        <button class="btn btn-warning btn-sm edit-btn" title="Edit Data Nasabah" data-id="' . $row["id"] . '" data-no_rek="' . $row["no_rek"] . '" data-nama_nasabah="' . $row["nama_nasabah"] . '" data-jenis_kelamin="' . $row["jenis_kelamin"] . '" data-alamat="' . $row["alamat"] . '" data-tgl_mulai="' . $row["tgl_mulai"] . '" data-saldo_akhir="' . $row["saldo_akhir"] . '" data-kolektor="' . $row["kolektor"] . '" data-bs-toggle="modal" data-bs-target="#editModal">
+                                            <i class="fas fa-edit"></i> Edit
+                                        </button>
+                                        <button class="btn btn-danger btn-sm delete-btn" title="Hapus Data Nasabah" data-id="' . $row["id"] . '" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                            <i class="fas fa-trash-alt"></i> Delete
+                                        </button>
+                                    </td>';
+                                    $nomorUrutTerakhir++;
+                                    echo "</tr>";
+                                }
+                            } else {
+                                echo "<tr><td colspan='8'>Tidak ada data nasabah</td></tr>";
+                            }
+                            $koneklocalhost->close();
+                            ?>
                         </tbody>
                     </table>
                 </div>
@@ -332,6 +345,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
         </div>
     </div>
+
 <?php include 'footer.php'; ?>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

@@ -87,6 +87,26 @@ if (!isset($_SESSION['userid'])) {
         }
 
     </style>
+    <style>
+        .small-box {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 0.375rem;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .small-box img {
+            max-height: 60px;
+            margin-bottom: 0.5rem;
+        }
+        .small-box h5 {
+            margin: 0.5rem 0;
+        }
+        .small-box button {
+            margin-top: 0.5rem;
+        }
+    </style>
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -116,7 +136,7 @@ if (!isset($_SESSION['userid'])) {
                 ?>
 
                 <div class="row" align="center">
-                    <div class="col-md-3 mb-3">
+                    <!-- <div class="col-md-3 mb-3">
                         <div class="card">
                             <div class="card-body text-center">
                                 <img src="img/path-to-setor-tunai-icon.png" alt="Setor Tunai Icon" class="img-fluid" style="max-height: 100px;">
@@ -125,15 +145,15 @@ if (!isset($_SESSION['userid'])) {
                                 <button onclick="location.href='setortunai.php?page=setortunai'" class="btn btn-secondary"><i class="fas fa-money-bill"></i> Setor Tunai</button>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="col-md-3 mb-3">
-                        <div class="card">
-                            <div class="card-body text-center">
-                                <img src="img/path-to-cek-saldo-icon.png" alt="Cek Saldo Icon" class="img-fluid" style="max-height: 100px;">
-                                <h5 class="card-title">Cek Saldo</h5>
-                                <p class="card-text">Klik untuk cek saldo Anda.</p>
-                                <button onclick="location.href='ceksaldo.php?page=ceksaldo'" class="btn btn-secondary"><i class="fas fa-user"></i> Cek Saldo</button>
-                            </div>
+                        <div class="small-box">
+                            <img src="img/path-to-cek-saldo-icon.png" alt="Cek Saldo Icon" class="img-fluid">
+                            <h5 class="box-title">Cek Saldo</h5>
+                            <p class="box-text">Klik untuk cek saldo Anda.</p>
+                            <button onclick="location.href='ceksaldo.php?page=ceksaldo'" class="btn btn-secondary">
+                                <i class="fas fa-wallet"></i> Cek Saldo
+                            </button>
                         </div>
                     </div>
                 </div>
