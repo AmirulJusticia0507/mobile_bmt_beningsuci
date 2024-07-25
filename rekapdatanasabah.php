@@ -147,7 +147,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <main class="content">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="index.php?page=dashboard">Home</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Rekap Data Nasabah</li>
                     </ol>
                 </nav>
@@ -156,7 +156,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 ?>
 
                 <div class="container-fluid">
-                    <h1>Rekap Data Nasabah</h1>
+                    <h1>Rekap Data Nasabah</h1><br>
+                    <div class="mb-4">
+                        <form action="import.php" method="POST" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="file">Import Excel/CSV:</label>
+                                <input type="file" name="file" class="form-control-file" id="file" accept=".csv, .xlsx, .xls" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Import</button>
+                        </form>
+                    </div>
                     <button class="myButtonCekSaldo mb-3" data-bs-toggle="modal" data-bs-target="#createModal"><i class="fas fa-plus"></i> Tambah Data</button><br><br>
                     
                     <!-- Tabel DataNasabah -->

@@ -107,7 +107,7 @@ if (!isset($_SESSION['userid'])) {
             <main class="content">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="index.php?page=dashboard">Home</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Setor Tunai</li>
                     </ol>
                 </nav>

@@ -153,7 +153,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['search'])) {
             <main class="content">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="index.php?page=dashboard">Home</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Cek Saldo Nasabah</li>
                     </ol>
                 </nav>
