@@ -4,10 +4,10 @@
             <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="about.php"> About</a>
+            <a class="nav-link" href="about.php?page=about"> About</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="category.php"> Category </a>
+            <a class="nav-link" href="category.php?page=category"> Category </a>
         </li>
     </ul>
     <div class="user_option">

@@ -13,10 +13,10 @@
               Jika Anda adalah pribadi yang selalu menginginkan konsep syariah dalam setiap pengelolaan keuangan Anda, maka kami hadir sebagai solusi bagi Anda.
             </p>
             <div class="btn-box">
-              <a href="./about.php" class="btn-1">
+              <a href="./about.php?page=about" class="btn-1">
               <i class="fas fa-info-circle"></i> Tentang Kami
               </a>
-              <a href="./category.php" class="btn-2">
+              <a href="./category.php?page=category" class="btn-2">
               <i class="fas fa-box"></i> Produk Kami
               </a>
             </div>
@@ -43,10 +43,10 @@
               Jika Anda adalah pribadi yang selalu menginginkan konsep syariah dalam setiap pengelolaan keuangan Anda, maka kami hadir sebagai solusi bagi Anda.
             </p>
             <div class="btn-box">
-              <a href="./about.php" class="btn-1">
+              <a href="./about.php?page=about" class="btn-1">
               <i class="fas fa-info-circle"></i> Tentang Kami
               </a>
-              <a href="./category.php" class="btn-2">
+              <a href="./category.php?page=category" class="btn-2">
               <i class="fas fa-box"></i> Produk Kami
               </a>
             </div>
@@ -73,10 +73,10 @@
               Jika Anda adalah pribadi yang selalu menginginkan konsep syariah dalam setiap pengelolaan keuangan Anda, maka kami hadir sebagai solusi bagi Anda.
             </p>
             <div class="btn-box">
-              <a href="./about.php" class="btn-1">
+              <a href="./about.php?page=about" class="btn-1">
               <i class="fas fa-info-circle"></i> Tentang Kami
               </a>
-              <a href="./category.php" class="btn-2">
+              <a href="./category.php?page=category" class="btn-2">
               <i class="fas fa-box"></i> Produk Kami
               </a>
             </div>

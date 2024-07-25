@@ -113,7 +113,7 @@
         <!-- Qurban -->
         <div class="box" data-toggle="modal" data-target="#modalQurban">
           <div class="img-box">
-            <i class="fas fa-cow fa-3x"></i>
+            <i class="fas fa-hand-holding-heart fa-3x"></i>
           </div>
           <div class="detail-box">
             <h5>

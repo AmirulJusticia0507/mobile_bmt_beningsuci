@@ -3,7 +3,7 @@
     "type": "phpmailer",
     "require": {
         "phpmailer/phpmailer": "^6.9",
-        "phpoffice/phpspreadsheet": "^2.1"
+        "phpoffice/phpspreadsheet": "^2.2"
     },
     "autoload": {
         "psr-4": {

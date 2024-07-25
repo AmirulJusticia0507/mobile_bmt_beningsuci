@@ -56,9 +56,6 @@
                 <li class="user-details">
                     <p>Users: <strong><?php echo $namalengkap; ?></strong></p>
                 </li>
-                <li class="dropdown-footer">
-                    <a href="karyawan.php?page=karyawan" class="btn btn-info">Profile</a>
-                </li>
             </ul>
         </li>
     </ul>
